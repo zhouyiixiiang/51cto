@@ -1,7 +1,7 @@
 package spyder
 
 import (
-	"golang.org/x/net/html"
+	"fmt"
 	"io/ioutil"
 	"net/http"
 	"os"
@@ -26,9 +26,10 @@ func (item *Html)GetUrl(url string)[]string{
 	file.Write(b)
 	file.Close()
 	newFile,_:=os.Open("1.txt")
-	doc,err:=html.Parse(newFile)
+	fmt.Println(newFile.Name())
+	//doc,err:=html.Parse(newFile)
 	tmpList:=[]string{}
-
+	return tmpList
 }
 
 func (item *Html)GetMail(url string)[]string{
